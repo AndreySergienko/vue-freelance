@@ -30,7 +30,8 @@ export default {
       return state.tasks.push(...Object.values(tasks))
     },
     deleteTask(state, id) {
-      state.tasks.splice(id, 1)
+      const idx = state.tasks.findIndex(task => task.id === id)
+      state.tasks.splice(idx, 1)
     },
     deleteFilter(state) {
       return state.filterTasks = null
